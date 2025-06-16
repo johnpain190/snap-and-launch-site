@@ -73,7 +73,7 @@ export const Benefits = () => {
         </div>
 
         {/* New section - Bereit für Wachstum */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-20">
           {/* Left side - Text */}
           <div className="space-y-8">
             <h3 className="text-4xl font-bold text-white mb-6">
@@ -91,6 +91,37 @@ export const Benefits = () => {
               alt="Distribution Chart"
               className="w-full max-w-lg"
             />
+          </div>
+        </div>
+
+        {/* New section - 4 columns */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="space-y-4">
+            <h3 className="text-sm font-semibold text-gray-400 uppercase tracking-wider">SUPPLY</h3>
+            <p className="text-white font-medium">
+              Startangebot: 4,2 Milliarden VSN
+            </p>
+          </div>
+          
+          <div className="space-y-4">
+            <h3 className="text-sm font-semibold text-gray-400 uppercase tracking-wider">STAKING</h3>
+            <p className="text-white font-medium">
+              Staking mit dynamischer Emission – ab 5% pro Jahr
+            </p>
+          </div>
+          
+          <div className="space-y-4">
+            <h3 className="text-sm font-semibold text-gray-400 uppercase tracking-wider">GOVERNANCE</h3>
+            <p className="text-white font-medium">
+              Die Community entscheidet über Emissionen, Token-Burns und Weiterentwicklungen
+            </p>
+          </div>
+          
+          <div className="space-y-4">
+            <h3 className="text-sm font-semibold text-gray-400 uppercase tracking-wider">REVENUE</h3>
+            <p className="text-white font-medium">
+              A portion of the fees from the entire product suite fund ecosystem
+            </p>
           </div>
         </div>
       </div>

@@ -1,10 +1,13 @@
 
-import { useState } from "react";
-import { ChevronDown, ChevronUp } from "lucide-react";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import { Plus } from "lucide-react";
 
 export const FAQ = () => {
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
-
   const faqs = [
     {
       question: "Was steckt hinter dem Merge von BEST und Pantos?",
@@ -32,40 +35,28 @@ export const FAQ = () => {
     }
   ];
 
-  const toggleFAQ = (index: number) => {
-    setOpenIndex(openIndex === index ? null : index);
-  };
-
   return (
     <section className="py-20 bg-black">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-4xl lg:text-5xl font-bold text-center mb-16">FAQ</h2>
+        <h2 className="text-4xl lg:text-5xl font-bold text-center mb-16 text-white">FAQ</h2>
         
-        <div className="space-y-4">
+        <Accordion type="single" collapsible className="w-full space-y-0">
           {faqs.map((faq, index) => (
-            <div
-              key={index}
-              className="border-b border-gray-800 pb-4"
+            <AccordionItem 
+              key={index} 
+              value={`item-${index}`}
+              className="border-b border-gray-700 last:border-b-0"
             >
-              <button
-                className="w-full flex justify-between items-center text-left py-4 hover:text-emerald-400 transition-colors duration-200"
-                onClick={() => toggleFAQ(index)}
-              >
-                <span className="text-lg font-medium pr-4">{faq.question}</span>
-                {openIndex === index ? (
-                  <ChevronUp className="w-6 h-6 text-emerald-400 flex-shrink-0" />
-                ) : (
-                  <ChevronDown className="w-6 h-6 flex-shrink-0" />
-                )}
-              </button>
-              {openIndex === index && (
-                <div className="pb-4 text-gray-400 leading-relaxed animate-fade-in">
-                  {faq.answer}
-                </div>
-              )}
-            </div>
+              <AccordionTrigger className="flex justify-between items-center py-6 text-left hover:no-underline hover:text-white text-white font-medium text-lg [&>svg]:hidden">
+                <span className="pr-4">{faq.question}</span>
+                <Plus className="h-6 w-6 shrink-0 text-emerald-400 transition-transform duration-200 group-data-[state=open]/trigger:rotate-45" />
+              </AccordionTrigger>
+              <AccordionContent className="pb-6 pt-0 text-gray-400 leading-relaxed">
+                {faq.answer}
+              </AccordionContent>
+            </AccordionItem>
           ))}
-        </div>
+        </Accordion>
       </div>
     </section>
   );

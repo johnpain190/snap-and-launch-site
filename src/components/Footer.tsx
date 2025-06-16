@@ -41,58 +41,57 @@ export const Footer = () => {
         "Swap",
         "Sicherheit"
       ]
-    },
-    {
-      title: "Produkte",
-      links: [
-        "Card",
-        "BEST",
-        "Pantos",
-        "App",
-        "Bitpanda Custody"
-      ]
-    },
-    {
-      title: "Bitpanda Technology Solutions",
-      links: [
-        "Home",
-        "Plattform",
-        "Kunden",
-        "Partner",
-        "Einblicke"
-      ]
     }
   ];
 
-  const companyLinks = [
-    "Über uns",
-    "Karriere", 
-    "Presse",
-    "Blog",
-    "Hilfe"
+  const produkteLinks = [
+    "Card",
+    "BEST",
+    "Pantos",
+    "App",
+    "Bitpanda Custody"
   ];
 
-  const legalLinks = [
-    "Impressum",
-    "Datenschutzerklärung",
-    "Geschäftsbedingungen und Richtlinien",
-    "Hinweisgeber",
-    "Complaints",
-    "Bug Bounty",
-    "Cookie settings"
+  const bitpandaTechLinks = [
+    "Home",
+    "Plattform",
+    "Kunden",
+    "Partner",
+    "Einblicke"
   ];
 
-  const partnerLogos = ["Bloomberg", "TechCrunch", "CNBC"];
+  const companyLinks = ["Über uns", "Karriere", "Presse", "Blog", "Hilfe"];
+
+  const socialIcons = [
+    { name: "Facebook", symbol: "f" },
+    { name: "Twitter", symbol: "𝕏" },
+    { name: "Telegram", symbol: "t" },
+    { name: "Reddit", symbol: "r" },
+    { name: "LinkedIn", symbol: "in" },
+    { name: "YouTube", symbol: "yt" },
+    { name: "Discord", symbol: "d" },
+    { name: "Instagram", symbol: "ig" }
+  ];
 
   return (
     <footer className="bg-white text-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        {/* Logo */}
+        <div className="mb-12">
+          <img 
+            src="https://sbcdn.bitpanda.com/3912x1183/4a12f4c044/bitpanda_en_trimmed.png" 
+            alt="Bitpanda" 
+            className="h-8"
+          />
+        </div>
+
         {/* Main Footer Content */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 mb-12">
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 mb-12">
+          {/* First 4 sections */}
           {footerSections.map((section, index) => (
             <div key={index}>
-              <h3 className="font-semibold mb-4">{section.title}</h3>
-              <ul className="space-y-2">
+              <h3 className="font-semibold mb-4 text-black">{section.title}</h3>
+              <ul className="space-y-3">
                 {section.links.map((link, linkIndex) => (
                   <li key={linkIndex}>
                     <a 
@@ -106,20 +105,60 @@ export const Footer = () => {
               </ul>
             </div>
           ))}
+
+          {/* Produkte section */}
+          <div>
+            <h3 className="font-semibold mb-4 text-black">Produkte</h3>
+            <ul className="space-y-3">
+              {produkteLinks.map((link, linkIndex) => (
+                <li key={linkIndex}>
+                  <a 
+                    href="#" 
+                    className="text-gray-600 hover:text-black transition-colors duration-200 text-sm"
+                  >
+                    {link}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Bitpanda Technology Solutions section */}
+          <div>
+            <h3 className="font-semibold mb-4 text-black">Bitpanda Technology Solutions</h3>
+            <ul className="space-y-3">
+              {bitpandaTechLinks.map((link, linkIndex) => (
+                <li key={linkIndex}>
+                  <a 
+                    href="#" 
+                    className="text-gray-600 hover:text-black transition-colors duration-200 text-sm"
+                  >
+                    {link}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
 
         {/* App Download Section */}
         <div className="mb-12">
-          <h3 className="font-semibold mb-4">App holen</h3>
+          <h3 className="font-semibold mb-4 text-black">App holen</h3>
           <div className="flex space-x-4">
-            <div className="bg-black text-white px-4 py-2 rounded-lg flex items-center space-x-2">
-              <span className="text-sm">Download on the</span>
-              <span className="font-semibold">App Store</span>
-            </div>
-            <div className="bg-black text-white px-4 py-2 rounded-lg flex items-center space-x-2">
-              <span className="text-sm">Get it on</span>
-              <span className="font-semibold">Google Play</span>
-            </div>
+            <a href="#" className="block">
+              <img 
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Google_Play_Store_badge_EN.svg/2560px-Google_Play_Store_badge_EN.svg.png"
+                alt="Get it on Google Play"
+                className="h-12"
+              />
+            </a>
+            <a href="#" className="block">
+              <img 
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Download_on_the_App_Store_Badge.svg/2560px-Download_on_the_App_Store_Badge.svg.png"
+                alt="Download on the App Store"
+                className="h-12"
+              />
+            </a>
           </div>
         </div>
 
@@ -129,7 +168,7 @@ export const Footer = () => {
             <a 
               key={index}
               href="#" 
-              className="text-gray-600 hover:text-black transition-colors duration-200"
+              className="text-black hover:text-gray-600 transition-colors duration-200 font-medium"
             >
               {link}
             </a>
@@ -137,48 +176,17 @@ export const Footer = () => {
         </div>
 
         {/* Social Media Icons */}
-        <div className="flex space-x-4 mb-8">
-          {['f', 'X', 't', 'r', 'in', 'yt', 'd', 'ig'].map((icon, index) => (
+        <div className="flex space-x-4">
+          {socialIcons.map((icon, index) => (
             <a 
               key={index}
               href="#" 
-              className="w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center hover:bg-gray-300 transition-colors duration-200"
+              className="w-8 h-8 text-black hover:text-gray-600 transition-colors duration-200 flex items-center justify-center"
+              aria-label={icon.name}
             >
-              <span className="text-sm font-semibold">{icon}</span>
+              <span className="text-lg font-medium">{icon.symbol}</span>
             </a>
           ))}
-        </div>
-
-        {/* Bottom Section */}
-        <div className="border-t border-gray-200 pt-8">
-          <div className="flex flex-col lg:flex-row justify-between items-start space-y-6 lg:space-y-0">
-            {/* Legal Links */}
-            <div className="flex flex-wrap gap-4 text-sm text-gray-600">
-              {legalLinks.map((link, index) => (
-                <a 
-                  key={index}
-                  href="#" 
-                  className="hover:text-black transition-colors duration-200"
-                >
-                  {link}
-                </a>
-              ))}
-            </div>
-
-            {/* Copyright */}
-            <div className="text-sm text-gray-600">
-              © 2025 Bitpanda GmbH
-            </div>
-          </div>
-
-          {/* Partner Logos */}
-          <div className="flex items-center space-x-8 mt-8 pt-8 border-t border-gray-200">
-            {partnerLogos.map((logo, index) => (
-              <div key={index} className="text-gray-400 font-semibold">
-                {logo}
-              </div>
-            ))}
-          </div>
         </div>
       </div>
     </footer>

@@ -2,10 +2,10 @@
 import { useState, useEffect } from "react";
 
 interface CountdownTimerProps {
-  targetDays: number;
+  targetDate: string; // Changed from targetDays to targetDate
 }
 
-export const CountdownTimer = ({ targetDays }: CountdownTimerProps) => {
+export const CountdownTimer = ({ targetDate }: CountdownTimerProps) => {
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
     hours: 0,
@@ -14,12 +14,12 @@ export const CountdownTimer = ({ targetDays }: CountdownTimerProps) => {
   });
 
   useEffect(() => {
-    const targetDate = new Date();
-    targetDate.setDate(targetDate.getDate() + targetDays);
-
+    // Parse the target date string to create a Date object
+    const target = new Date(targetDate);
+    
     const timer = setInterval(() => {
       const now = new Date().getTime();
-      const distance = targetDate.getTime() - now;
+      const distance = target.getTime() - now;
 
       if (distance > 0) {
         const days = Math.floor(distance / (1000 * 60 * 60 * 24));
@@ -34,7 +34,7 @@ export const CountdownTimer = ({ targetDays }: CountdownTimerProps) => {
     }, 1000);
 
     return () => clearInterval(timer);
-  }, [targetDays]);
+  }, [targetDate]);
 
   return (
     <div className="flex space-x-8 lg:space-x-12">

@@ -22,13 +22,12 @@ export const Header = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
-          <div className="flex items-center space-x-2">
-            <div className="flex items-center space-x-1">
-              <div className="w-6 h-6 bg-black rounded-sm flex items-center justify-center">
-                <span className="text-white font-bold text-sm">b</span>
-              </div>
-              <span className="text-xl font-bold text-black">bitpanda</span>
-            </div>
+          <div className="flex items-center">
+            <img 
+              src="https://sbcdn.bitpanda.com/500x147/3d8067ec09/bitpanda-fcb-acb-nfl-psg-atp.gif"
+              alt="Bitpanda"
+              className="h-8"
+            />
           </div>
 
           {/* Desktop Navigation */}
@@ -64,7 +63,7 @@ export const Header = () => {
             </span>
             
             <Button className="bg-emerald-500 hover:bg-emerald-600 text-white font-semibold px-6 py-2 rounded-md">
-              Jetzt loslegen
+              Connect wallet
             </Button>
           </div>
 
@@ -101,7 +100,7 @@ export const Header = () => {
                   Einloggen
                 </Button>
                 <Button className="w-full bg-emerald-500 hover:bg-emerald-600 text-white font-semibold">
-                  Jetzt loslegen
+                  Connect wallet
                 </Button>
               </div>
             </nav>

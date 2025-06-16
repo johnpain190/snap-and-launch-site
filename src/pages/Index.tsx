@@ -2,7 +2,6 @@
 import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
 import { TokenInfo } from "@/components/TokenInfo";
-import { Features } from "@/components/Features";
 import { Tokenomics } from "@/components/Tokenomics";
 import { Benefits } from "@/components/Benefits";
 import { Timeline } from "@/components/Timeline";
@@ -15,8 +14,6 @@ const Index = () => {
       <Header />
       <Hero />
       <TokenInfo />
-      <Features />
-      <Tokenomics />
       <Benefits />
       <Timeline />
       <FAQ />

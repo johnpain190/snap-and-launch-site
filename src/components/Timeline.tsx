@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 
 export const Timeline = () => {
@@ -50,21 +51,21 @@ export const Timeline = () => {
           </Button>
         </div>
 
-        <div className="relative max-w-5xl mx-auto">
-          {/* Horizontal Timeline Line */}
-          <div className="absolute top-[120px] left-[10%] right-[10%] h-0.5 bg-gradient-to-r from-teal-400 via-purple-400 to-emerald-400"></div>
+        <div className="relative max-w-3xl mx-auto">
+          {/* Vertical Timeline Line */}
+          <div className="absolute left-1/2 transform -translate-x-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-teal-400 via-purple-400 to-emerald-400"></div>
           
-          {/* Timeline Events - Horizontal Layout */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-16 relative px-8">
+          {/* Timeline Events - Vertical Layout */}
+          <div className="space-y-16 relative">
             {timelineEvents.map((event, index) => (
-              <div key={index} className="relative text-left">
+              <div key={index} className="relative flex items-center">
                 {/* Event Circle */}
-                <div className="absolute top-[117px] left-[50%] transform -translate-x-1/2 w-1.5 h-1.5 bg-white rounded-full z-10"></div>
+                <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-white rounded-full z-10 border-4 border-black"></div>
                 
-                {/* Event Content */}
-                <div className="text-center">
+                {/* Event Content - Alternating sides */}
+                <div className={`w-5/12 ${index % 2 === 0 ? 'text-right pr-8' : 'ml-auto text-left pl-8'}`}>
                   {/* Event Image */}
-                  <div className="mb-8 flex justify-center">
+                  <div className={`mb-4 flex ${index % 2 === 0 ? 'justify-end' : 'justify-start'}`}>
                     <img 
                       src={event.image} 
                       alt={event.title}
@@ -73,10 +74,10 @@ export const Timeline = () => {
                   </div>
                   
                   {/* Event Details */}
-                  <div className="space-y-1 pt-8">
-                    <h3 className="text-lg font-bold text-white">{event.date}</h3>
-                    <p className="text-gray-400 font-medium text-xs">{event.time}</p>
-                    <p className="text-sm text-white leading-tight mt-2">{event.title}</p>
+                  <div className="space-y-2">
+                    <h3 className="text-xl font-bold text-white">{event.date}</h3>
+                    <p className="text-gray-400 font-medium text-sm">{event.time}</p>
+                    <p className="text-base text-white leading-tight">{event.title}</p>
                   </div>
                 </div>
               </div>

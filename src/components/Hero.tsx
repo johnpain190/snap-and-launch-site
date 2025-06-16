@@ -1,12 +1,9 @@
-
 import { Button } from "@/components/ui/button";
 import { CountdownTimer } from "./CountdownTimer";
+import { useWalletConnection } from "@/hooks/useWalletConnection";
 
 export const Hero = () => {
-  const handleConnectWallet = () => {
-    console.log("Connect wallet clicked");
-    // Wallet connection logic would go here
-  };
+  const { handleConnectWallet } = useWalletConnection();
 
   return (
     <section className="relative h-[80vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-teal-800 via-teal-900 to-teal-950">

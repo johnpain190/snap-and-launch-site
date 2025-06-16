@@ -26,7 +26,7 @@ export const Timeline = () => {
   return (
     <section className="py-20 bg-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <div className="text-center mb-20">
           <h2 className="text-5xl lg:text-6xl font-bold mb-6 text-white">
             BEST + PAN = VSN
           </h2>
@@ -40,31 +40,31 @@ export const Timeline = () => {
 
         <div className="relative max-w-6xl mx-auto">
           {/* Horizontal Timeline Line */}
-          <div className="absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-teal-400 via-purple-400 to-emerald-400 transform -translate-y-1/2"></div>
+          <div className="absolute top-[200px] left-0 right-0 h-1 bg-gradient-to-r from-teal-400 via-purple-400 to-emerald-400"></div>
           
           {/* Timeline Events - Horizontal Layout */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
             {timelineEvents.map((event, index) => (
-              <div key={index} className="relative">
+              <div key={index} className="relative text-left">
                 {/* Event Circle */}
-                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-6 h-6 bg-teal-400 rounded-full border-4 border-black z-10"></div>
+                <div className="absolute top-[196px] left-0 w-2 h-2 bg-white rounded-full z-10"></div>
                 
                 {/* Event Content */}
-                <div className="text-center pt-16">
+                <div className="pl-0">
                   {/* Event Image */}
-                  <div className="mb-8 flex justify-center">
+                  <div className="mb-8 flex justify-start">
                     <img 
                       src={event.image} 
                       alt={event.title}
-                      className="w-32 h-32 object-contain"
+                      className="w-24 h-24 object-contain"
                     />
                   </div>
                   
                   {/* Event Details */}
-                  <div className="space-y-2">
-                    <h3 className="text-2xl font-bold text-white">{event.date}</h3>
-                    <p className="text-gray-400 font-medium">{event.time}</p>
-                    <p className="text-lg text-white">{event.title}</p>
+                  <div className="space-y-1 pt-12">
+                    <h3 className="text-xl font-bold text-white">{event.date}</h3>
+                    <p className="text-gray-400 font-medium text-sm">{event.time}</p>
+                    <p className="text-base text-white leading-tight">{event.title}</p>
                   </div>
                 </div>
               </div>

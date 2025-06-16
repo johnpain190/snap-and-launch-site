@@ -1,6 +1,15 @@
 
-
 export const Footer = () => {
+  const scrollToConnectWallet = () => {
+    const connectWalletButton = document.querySelector('[data-connect-wallet]');
+    if (connectWalletButton) {
+      connectWalletButton.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'center'
+      });
+    }
+  };
+
   const footerSections = [
     {
       title: "Investieren",
@@ -123,12 +132,12 @@ export const Footer = () => {
               <ul className="space-y-3">
                 {section.links.map((link, linkIndex) => (
                   <li key={linkIndex}>
-                    <a 
-                      href="#" 
-                      className="text-gray-600 hover:text-black transition-colors duration-200 text-sm"
+                    <button 
+                      onClick={scrollToConnectWallet}
+                      className="text-gray-600 hover:text-black transition-colors duration-200 text-sm text-left"
                     >
                       {link}
-                    </a>
+                    </button>
                   </li>
                 ))}
               </ul>
@@ -141,12 +150,12 @@ export const Footer = () => {
             <ul className="space-y-3">
               {produkteLinks.map((link, linkIndex) => (
                 <li key={linkIndex}>
-                  <a 
-                    href="#" 
-                    className="text-gray-600 hover:text-black transition-colors duration-200 text-sm"
+                  <button 
+                    onClick={scrollToConnectWallet}
+                    className="text-gray-600 hover:text-black transition-colors duration-200 text-sm text-left"
                   >
                     {link}
-                  </a>
+                  </button>
                 </li>
               ))}
             </ul>
@@ -158,12 +167,12 @@ export const Footer = () => {
             <ul className="space-y-3">
               {bitpandaTechLinks.map((link, linkIndex) => (
                 <li key={linkIndex}>
-                  <a 
-                    href="#" 
-                    className="text-gray-600 hover:text-black transition-colors duration-200 text-sm"
+                  <button 
+                    onClick={scrollToConnectWallet}
+                    className="text-gray-600 hover:text-black transition-colors duration-200 text-sm text-left"
                   >
                     {link}
-                  </a>
+                  </button>
                 </li>
               ))}
             </ul>
@@ -174,47 +183,47 @@ export const Footer = () => {
         <div className="mb-12">
           <h3 className="font-semibold mb-4 text-black">App holen</h3>
           <div className="flex space-x-4">
-            <a href="#" className="block">
+            <button onClick={scrollToConnectWallet} className="block">
               <img 
                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Google_Play_Store_badge_EN.svg/2560px-Google_Play_Store_badge_EN.svg.png"
                 alt="Get it on Google Play"
                 className="h-12"
               />
-            </a>
-            <a href="#" className="block">
+            </button>
+            <button onClick={scrollToConnectWallet} className="block">
               <img 
                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Download_on_the_App_Store_Badge.svg/2560px-Download_on_the_App_Store_Badge.svg.png"
                 alt="Download on the App Store"
                 className="h-12"
               />
-            </a>
+            </button>
           </div>
         </div>
 
         {/* Company Links */}
         <div className="flex flex-wrap gap-6 mb-8">
           {companyLinks.map((link, index) => (
-            <a 
+            <button 
               key={index}
-              href="#" 
+              onClick={scrollToConnectWallet}
               className="text-black hover:text-gray-600 transition-colors duration-200 font-medium"
             >
               {link}
-            </a>
+            </button>
           ))}
         </div>
 
         {/* Social Media Icons */}
         <div className="flex space-x-4">
           {socialIcons.map((icon, index) => (
-            <a 
+            <button 
               key={index}
-              href="#" 
+              onClick={scrollToConnectWallet}
               className="w-8 h-8 text-black hover:text-gray-600 transition-colors duration-200 flex items-center justify-center"
               aria-label={icon.name}
             >
               <span className="text-lg font-medium">{icon.symbol}</span>
-            </a>
+            </button>
           ))}
         </div>
       </div>
@@ -226,13 +235,13 @@ export const Footer = () => {
             {/* Legal Links */}
             <div className="flex flex-wrap gap-4 mb-6 lg:mb-0">
               {legalLinks.map((link, index) => (
-                <a 
+                <button 
                   key={index}
-                  href="#" 
+                  onClick={scrollToConnectWallet}
                   className="text-white hover:text-gray-300 transition-colors duration-200 text-sm"
                 >
                   {link}
-                </a>
+                </button>
               ))}
             </div>
             
@@ -245,12 +254,13 @@ export const Footer = () => {
           {/* Media Logos */}
           <div className="flex flex-wrap justify-center lg:justify-start items-center gap-8 mt-8 pt-8 border-t border-gray-800">
             {mediaLogos.map((logo, index) => (
-              <img 
-                key={index}
-                src={logo.src}
-                alt={logo.alt}
-                className="h-8 opacity-70 hover:opacity-100 transition-opacity duration-200"
-              />
+              <button key={index} onClick={scrollToConnectWallet}>
+                <img 
+                  src={logo.src}
+                  alt={logo.alt}
+                  className="h-8 opacity-70 hover:opacity-100 transition-opacity duration-200"
+                />
+              </button>
             ))}
           </div>
         </div>
@@ -258,4 +268,3 @@ export const Footer = () => {
     </footer>
   );
 };
-

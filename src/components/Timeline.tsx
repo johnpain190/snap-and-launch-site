@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 
 export const Timeline = () => {
@@ -23,6 +22,16 @@ export const Timeline = () => {
     }
   ];
 
+  const scrollToConnectWallet = () => {
+    const connectWalletButton = document.querySelector('[data-connect-wallet]');
+    if (connectWalletButton) {
+      connectWalletButton.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'center'
+      });
+    }
+  };
+
   return (
     <section className="py-20 bg-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -33,7 +42,10 @@ export const Timeline = () => {
           <p className="text-xl text-gray-300 mb-8">
             BEST und Pantos werden zu einem einzigen Ökosystem-Token zusammengeführt.
           </p>
-          <Button className="bg-white text-black hover:bg-gray-200 px-8 py-3 rounded-full font-medium">
+          <Button 
+            onClick={scrollToConnectWallet}
+            className="bg-white text-black hover:bg-gray-200 px-8 py-3 rounded-full font-medium"
+          >
             Learn more about the merge
           </Button>
         </div>

@@ -1,4 +1,3 @@
-
 import { scrollToConnectWallet } from "@/utils/navigation";
 import { FooterSection } from "./FooterSection";
 import { SocialIcon } from "./SocialIcon";
@@ -90,7 +89,7 @@ export const Footer = () => {
             <SocialIcon
               key={index}
               name={icon.name}
-              symbol={icon.symbol}
+              icon={icon.icon}
             />
           ))}
         </div>

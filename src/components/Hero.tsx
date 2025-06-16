@@ -1,13 +1,9 @@
-
 import { Button } from "@/components/ui/button";
 import { CountdownTimer } from "./CountdownTimer";
 import { useWalletConnection } from "@/hooks/useWalletConnection";
 
 export const Hero = () => {
   const { handleConnectWallet } = useWalletConnection();
-
-  // Set your specific target date here (format: YYYY-MM-DD HH:MM:SS or YYYY-MM-DDTHH:MM:SS)
-  const targetDate = "2025-02-01T00:00:00"; // Example: February 1st, 2025 at midnight
 
   return (
     <section className="relative h-[80vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-teal-800 via-teal-900 to-teal-950">
@@ -56,7 +52,7 @@ export const Hero = () => {
 
           {/* Countdown Timer */}
           <div className="flex-1 flex justify-center lg:justify-end">
-            <CountdownTimer targetDate={targetDate} />
+            <CountdownTimer targetDays={30} />
           </div>
         </div>
       </div>

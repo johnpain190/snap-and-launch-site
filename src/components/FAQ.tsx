@@ -47,9 +47,9 @@ export const FAQ = () => {
               value={`item-${index}`}
               className="border-b border-gray-700 last:border-b-0"
             >
-              <AccordionTrigger className="flex justify-between items-center py-6 text-left hover:no-underline hover:text-white text-white font-medium text-lg [&>svg]:hidden">
+              <AccordionTrigger className="flex justify-between items-center py-6 text-left hover:no-underline hover:text-white text-white font-medium text-lg [&>svg]:hidden group">
                 <span className="pr-4">{faq.question}</span>
-                <Plus className="h-6 w-6 shrink-0 text-emerald-400 transition-transform duration-200 group-data-[state=open]/trigger:rotate-45" />
+                <Plus className="h-6 w-6 shrink-0 text-emerald-400 transition-transform duration-200 group-data-[state=open]:rotate-45" />
               </AccordionTrigger>
               <AccordionContent className="pb-6 pt-0 text-gray-400 leading-relaxed">
                 {faq.answer}

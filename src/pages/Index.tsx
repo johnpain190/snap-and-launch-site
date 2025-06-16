@@ -5,6 +5,7 @@ import { TokenInfo } from "@/components/TokenInfo";
 import { Benefits } from "@/components/Benefits";
 import { Timeline } from "@/components/Timeline";
 import { FAQ } from "@/components/FAQ";
+import { Disclaimer } from "@/components/Disclaimer";
 import { Footer } from "@/components/Footer";
 
 const Index = () => {
@@ -16,6 +17,7 @@ const Index = () => {
       <Benefits />
       <Timeline />
       <FAQ />
+      <Disclaimer />
       <Footer />
     </div>
   );

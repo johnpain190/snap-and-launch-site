@@ -2,7 +2,6 @@
 import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
 import { TokenInfo } from "@/components/TokenInfo";
-import { Tokenomics } from "@/components/Tokenomics";
 import { Benefits } from "@/components/Benefits";
 import { Timeline } from "@/components/Timeline";
 import { FAQ } from "@/components/FAQ";

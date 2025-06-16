@@ -32,20 +32,24 @@ export const Benefits = () => {
             </ul>
           </div>
 
-          {/* Right side - 3D Image placeholder */}
+          {/* Right side - First Image */}
           <div className="flex justify-center">
-            <div className="w-64 h-64 bg-gradient-to-br from-teal-400/20 to-emerald-400/20 rounded-full flex items-center justify-center">
-              <div className="w-32 h-32 bg-gradient-to-br from-teal-400 via-emerald-400 to-cyan-400 rounded-2xl opacity-50"></div>
-            </div>
+            <img 
+              src="https://sbcdn.bitpanda.com/2000x900/f7753d023f/w3-main_wallet.png" 
+              alt="Bitpanda DeFi Wallet"
+              className="w-full max-w-md"
+            />
           </div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-          {/* Left side - 3D Image placeholder */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-20">
+          {/* Left side - Second Image */}
           <div className="flex justify-center">
-            <div className="w-64 h-64 bg-gradient-to-br from-emerald-400/20 to-teal-400/20 rounded-full flex items-center justify-center">
-              <div className="w-32 h-32 bg-gradient-to-br from-emerald-400 via-teal-400 to-green-400 rounded-2xl opacity-50"></div>
-            </div>
+            <img 
+              src="https://sbcdn.bitpanda.com/2000x900/63e6d86434/web3_cube_var3_redshift_main_rs_camera_mp14-m1p-08094_2025-03-07_13-38-08_.png" 
+              alt="Web3 Cube"
+              className="w-full max-w-md"
+            />
           </div>
 
           {/* Right side - BITPANDA.COM */}
@@ -65,6 +69,28 @@ export const Benefits = () => {
                 <span>Schnellerer Zugang zum Bitpanda Club</span>
               </li>
             </ul>
+          </div>
+        </div>
+
+        {/* New section - Bereit für Wachstum */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+          {/* Left side - Text */}
+          <div className="space-y-8">
+            <h3 className="text-4xl font-bold text-white mb-6">
+              Bereit für Wachstum. Entwickelt für die Zukunft.
+            </h3>
+            <p className="text-gray-400 text-lg">
+              Ein Token-Modell, das Verfügbarkeit, Belohnungen und Mitbestimmung ins Gleichgewicht bringt.
+            </p>
+          </div>
+
+          {/* Right side - Chart Image */}
+          <div className="flex justify-center">
+            <img 
+              src="https://sbcdn.bitpanda.com/2000x1200/14ebaf846e/250610_vision-announcement_distribition-graph_2000x1200.png" 
+              alt="Distribution Chart"
+              className="w-full max-w-lg"
+            />
           </div>
         </div>
       </div>

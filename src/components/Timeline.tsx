@@ -38,33 +38,33 @@ export const Timeline = () => {
           </Button>
         </div>
 
-        <div className="relative max-w-6xl mx-auto">
+        <div className="relative max-w-5xl mx-auto">
           {/* Horizontal Timeline Line */}
-          <div className="absolute top-[200px] left-0 right-0 h-1 bg-gradient-to-r from-teal-400 via-purple-400 to-emerald-400"></div>
+          <div className="absolute top-[120px] left-[10%] right-[10%] h-0.5 bg-gradient-to-r from-teal-400 via-purple-400 to-emerald-400"></div>
           
           {/* Timeline Events - Horizontal Layout */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-16 relative px-8">
             {timelineEvents.map((event, index) => (
               <div key={index} className="relative text-left">
                 {/* Event Circle */}
-                <div className="absolute top-[196px] left-0 w-2 h-2 bg-white rounded-full z-10"></div>
+                <div className="absolute top-[117px] left-[50%] transform -translate-x-1/2 w-1.5 h-1.5 bg-white rounded-full z-10"></div>
                 
                 {/* Event Content */}
-                <div className="pl-0">
+                <div className="text-center">
                   {/* Event Image */}
-                  <div className="mb-8 flex justify-start">
+                  <div className="mb-8 flex justify-center">
                     <img 
                       src={event.image} 
                       alt={event.title}
-                      className="w-24 h-24 object-contain"
+                      className="w-20 h-20 object-contain"
                     />
                   </div>
                   
                   {/* Event Details */}
-                  <div className="space-y-1 pt-12">
-                    <h3 className="text-xl font-bold text-white">{event.date}</h3>
-                    <p className="text-gray-400 font-medium text-sm">{event.time}</p>
-                    <p className="text-base text-white leading-tight">{event.title}</p>
+                  <div className="space-y-1 pt-8">
+                    <h3 className="text-lg font-bold text-white">{event.date}</h3>
+                    <p className="text-gray-400 font-medium text-xs">{event.time}</p>
+                    <p className="text-sm text-white leading-tight mt-2">{event.title}</p>
                   </div>
                 </div>
               </div>

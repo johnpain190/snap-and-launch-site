@@ -86,11 +86,11 @@ export const Footer = () => {
 
         {/* Social Media Icons */}
         <div className="flex space-x-4">
-          {SOCIAL_ICONS.map((icon, index) => (
+          {SOCIAL_ICONS.map((socialIcon, index) => (
             <SocialIcon
               key={index}
-              name={icon.name}
-              symbol={icon.symbol}
+              name={socialIcon.name}
+              icon={socialIcon.icon}
             />
           ))}
         </div>

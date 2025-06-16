@@ -1,38 +1,8 @@
-import { useState, useEffect } from "react";
+
 import { Button } from "@/components/ui/button";
+import { CountdownTimer } from "./CountdownTimer";
 
 export const Hero = () => {
-  const [timeLeft, setTimeLeft] = useState({
-    days: 0,
-    hours: 0,
-    minutes: 0,
-    seconds: 0
-  });
-
-  useEffect(() => {
-    // Set target date to 30 days from now
-    const targetDate = new Date();
-    targetDate.setDate(targetDate.getDate() + 30);
-
-    const timer = setInterval(() => {
-      const now = new Date().getTime();
-      const distance = targetDate.getTime() - now;
-
-      if (distance > 0) {
-        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-        setTimeLeft({ days, hours, minutes, seconds });
-      } else {
-        setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
-      }
-    }, 1000);
-
-    return () => clearInterval(timer);
-  }, []);
-
   const handleConnectWallet = () => {
     console.log("Connect wallet clicked");
     // Wallet connection logic would go here
@@ -85,26 +55,7 @@ export const Hero = () => {
 
           {/* Countdown Timer */}
           <div className="flex-1 flex justify-center lg:justify-end">
-            <div className="flex space-x-8 lg:space-x-12">
-              <div className="text-center">
-                <div className="text-6xl lg:text-8xl font-bold text-white mb-2">
-                  {timeLeft.days.toString().padStart(2, '0')}
-                </div>
-                <div className="text-white/70 text-lg">Tage</div>
-              </div>
-              <div className="text-center">
-                <div className="text-6xl lg:text-8xl font-bold text-white mb-2">
-                  {timeLeft.hours.toString().padStart(2, '0')}
-                </div>
-                <div className="text-white/70 text-lg">Stunden</div>
-              </div>
-              <div className="text-center">
-                <div className="text-6xl lg:text-8xl font-bold text-white mb-2">
-                  {timeLeft.minutes.toString().padStart(2, '0')}
-                </div>
-                <div className="text-white/70 text-lg">Minuten</div>
-              </div>
-            </div>
+            <CountdownTimer targetDays={30} />
           </div>
         </div>
       </div>

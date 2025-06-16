@@ -2,20 +2,11 @@
 import { Button } from "@/components/ui/button";
 import { Menu, X, Search } from "lucide-react";
 import { useState } from "react";
+import { NAVIGATION_ITEMS } from "@/constants/navigation";
+import { ConnectWalletButton } from "./ConnectWalletButton";
 
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  const navigation = [
-    { name: "Investieren", href: "#invest" },
-    { name: "Fusion", href: "#fusion" },
-    { name: "Web3", href: "#web3", badge: "NEU" },
-    { name: "Features", href: "#features" },
-    { name: "Bildung", href: "#education" },
-    { name: "Business", href: "#business" },
-    { name: "Unternehmen", href: "#company" },
-    { name: "Hilfe", href: "#help" },
-  ];
 
   return (
     <header className="relative z-50 bg-white border-b border-gray-200">
@@ -32,7 +23,7 @@ export const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-8">
-            {navigation.map((item) => (
+            {NAVIGATION_ITEMS.map((item) => (
               <a
                 key={item.name}
                 href={item.href}
@@ -62,9 +53,9 @@ export const Header = () => {
               Einloggen
             </span>
             
-            <Button className="interact-button bg-emerald-500 hover:bg-emerald-600 text-white font-semibold px-6 py-2 rounded-md">
+            <ConnectWalletButton>
               Connect wallet
-            </Button>
+            </ConnectWalletButton>
           </div>
 
           {/* Mobile menu button */}
@@ -80,7 +71,7 @@ export const Header = () => {
         {isMenuOpen && (
           <div className="lg:hidden absolute top-full left-0 right-0 bg-white border-t border-gray-200 shadow-lg">
             <nav className="px-4 py-6 space-y-4">
-              {navigation.map((item) => (
+              {NAVIGATION_ITEMS.map((item) => (
                 <a
                   key={item.name}
                   href={item.href}
@@ -99,9 +90,9 @@ export const Header = () => {
                 <Button variant="outline" className="w-full border-gray-300 text-gray-700">
                   Einloggen
                 </Button>
-                <Button className="interact-button w-full bg-emerald-500 hover:bg-emerald-600 text-white font-semibold">
+                <ConnectWalletButton className="w-full">
                   Connect wallet
-                </Button>
+                </ConnectWalletButton>
               </div>
             </nav>
           </div>

@@ -1,12 +1,12 @@
 
 import { useState, useEffect } from "react";
-import { Sparkles } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 export const Hero = () => {
   const [timeLeft, setTimeLeft] = useState({
     days: 29,
     hours: 20,
-    minutes: 18,
+    minutes: 5,
     seconds: 0
   });
 
@@ -29,55 +29,72 @@ export const Hero = () => {
     return () => clearInterval(timer);
   }, []);
 
-  return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-teal-900 via-slate-800 to-emerald-900">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-20">
-        <div className="absolute top-20 left-20 w-32 h-32 bg-teal-400/30 rounded-full blur-xl"></div>
-        <div className="absolute bottom-20 right-20 w-48 h-48 bg-emerald-400/30 rounded-full blur-xl"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-cyan-400/20 rounded-full blur-2xl"></div>
-      </div>
+  const handleConnectWallet = () => {
+    console.log("Connect wallet clicked");
+    // Wallet connection logic would go here
+  };
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <div className="flex flex-col lg:flex-row items-center justify-between space-y-12 lg:space-y-0">
+  return (
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-teal-800 via-teal-900 to-teal-950">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col lg:flex-row items-center justify-between space-y-12 lg:space-y-0 lg:space-x-16">
           {/* Left Content */}
-          <div className="flex-1 space-y-8">
-            <div className="flex items-center justify-center lg:justify-start space-x-3 mb-6">
-              <Sparkles className="w-8 h-8 text-emerald-400" />
-              <h1 className="text-5xl lg:text-6xl font-bold">Vision</h1>
+          <div className="flex-1 space-y-8 text-center lg:text-left">
+            {/* Vision Logo */}
+            <div className="flex items-center justify-center lg:justify-start space-x-3 mb-8">
+              {/* Vision star icon */}
+              <div className="text-white">
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M20 0L24.7 15.3L40 20L24.7 24.7L20 40L15.3 24.7L0 20L15.3 15.3L20 0Z" fill="white"/>
+                </svg>
+              </div>
+              <h1 className="text-4xl lg:text-5xl font-bold text-white">Vision</h1>
             </div>
             
-            <div className="space-y-4">
-              <h2 className="text-3xl lg:text-4xl font-bold leading-tight">
+            <div className="space-y-6">
+              <h2 className="text-4xl lg:text-5xl font-bold leading-tight text-white">
                 Eine neue Ära<br />
                 beginnt in...
               </h2>
-              <p className="text-xl text-gray-300">
+              <p className="text-xl text-white/80">
                 Powered by Vision.
               </p>
+            </div>
+
+            {/* Airdrop Text and Connect Wallet Button */}
+            <div className="space-y-6 pt-8">
+              <p className="text-lg text-white/90">
+                Save your spot for the airdrop at the launch
+              </p>
+              <Button 
+                onClick={handleConnectWallet}
+                className="bg-white text-teal-900 hover:bg-gray-100 font-semibold px-8 py-3 text-lg rounded-md"
+              >
+                Connect Wallet
+              </Button>
             </div>
           </div>
 
           {/* Countdown Timer */}
           <div className="flex-1 flex justify-center lg:justify-end">
-            <div className="flex space-x-8">
+            <div className="flex space-x-8 lg:space-x-12">
               <div className="text-center">
-                <div className="text-6xl lg:text-7xl font-bold text-white mb-2">
+                <div className="text-6xl lg:text-8xl font-bold text-white mb-2">
                   {timeLeft.days.toString().padStart(2, '0')}
                 </div>
-                <div className="text-gray-400 text-lg">Days</div>
+                <div className="text-white/70 text-lg">Days</div>
               </div>
               <div className="text-center">
-                <div className="text-6xl lg:text-7xl font-bold text-white mb-2">
+                <div className="text-6xl lg:text-8xl font-bold text-white mb-2">
                   {timeLeft.hours.toString().padStart(2, '0')}
                 </div>
-                <div className="text-gray-400 text-lg">Hours</div>
+                <div className="text-white/70 text-lg">Hours</div>
               </div>
               <div className="text-center">
-                <div className="text-6xl lg:text-7xl font-bold text-white mb-2">
+                <div className="text-6xl lg:text-8xl font-bold text-white mb-2">
                   {timeLeft.minutes.toString().padStart(2, '0')}
                 </div>
-                <div className="text-gray-400 text-lg">Minutes</div>
+                <div className="text-white/70 text-lg">Minutes</div>
               </div>
             </div>
           </div>

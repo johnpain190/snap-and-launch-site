@@ -58,13 +58,20 @@ export const Header = () => {
             </ConnectWalletButton>
           </div>
 
-          {/* Mobile menu button */}
-          <button
-            className="lg:hidden p-2"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-          >
-            {isMenuOpen ? <X size={24} className="text-black" /> : <Menu size={24} className="text-black" />}
-          </button>
+          {/* Mobile right side actions */}
+          <div className="flex lg:hidden items-center space-x-2">
+            <ConnectWalletButton className="text-xs px-3 py-1.5">
+              Connect
+            </ConnectWalletButton>
+            
+            {/* Mobile menu button */}
+            <button
+              className="p-2"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+            >
+              {isMenuOpen ? <X size={24} className="text-black" /> : <Menu size={24} className="text-black" />}
+            </button>
+          </div>
         </div>
 
         {/* Mobile Navigation */}
@@ -90,9 +97,6 @@ export const Header = () => {
                 <Button variant="outline" className="w-full border-gray-300 text-gray-700">
                   Einloggen
                 </Button>
-                <ConnectWalletButton className="w-full">
-                  Connect wallet
-                </ConnectWalletButton>
               </div>
             </nav>
           </div>

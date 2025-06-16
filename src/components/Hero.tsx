@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { CountdownTimer } from "./CountdownTimer";
 import { useWalletConnection } from "@/hooks/useWalletConnection";
@@ -52,7 +53,7 @@ export const Hero = () => {
 
           {/* Countdown Timer */}
           <div className="flex-1 flex justify-center lg:justify-end">
-            <CountdownTimer targetDays={30} />
+            <CountdownTimer />
           </div>
         </div>
       </div>

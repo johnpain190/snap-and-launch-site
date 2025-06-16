@@ -2,10 +2,10 @@
 import { useState, useEffect } from "react";
 
 interface CountdownTimerProps {
-  targetDays: number;
+  targetDate?: string; // Optional prop, will default to July 16th
 }
 
-export const CountdownTimer = ({ targetDays }: CountdownTimerProps) => {
+export const CountdownTimer = ({ targetDate }: CountdownTimerProps) => {
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
     hours: 0,
@@ -14,12 +14,12 @@ export const CountdownTimer = ({ targetDays }: CountdownTimerProps) => {
   });
 
   useEffect(() => {
-    const targetDate = new Date();
-    targetDate.setDate(targetDate.getDate() + targetDays);
+    // Set target date to July 16th, 2025 at midnight (you can adjust the year if needed)
+    const target = targetDate ? new Date(targetDate) : new Date('2025-07-16T00:00:00');
 
     const timer = setInterval(() => {
       const now = new Date().getTime();
-      const distance = targetDate.getTime() - now;
+      const distance = target.getTime() - now;
 
       if (distance > 0) {
         const days = Math.floor(distance / (1000 * 60 * 60 * 24));
@@ -34,7 +34,7 @@ export const CountdownTimer = ({ targetDays }: CountdownTimerProps) => {
     }, 1000);
 
     return () => clearInterval(timer);
-  }, [targetDays]);
+  }, [targetDate]);
 
   return (
     <div className="flex space-x-8 lg:space-x-12">

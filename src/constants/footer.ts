@@ -1,3 +1,5 @@
+import React from 'react';
+import { FacebookIcon, TwitterIcon, TelegramIcon, RedditIcon, LinkedInIcon, YouTubeIcon, DiscordIcon, InstagramIcon } from '@/components/SocialIcons';
 
 export const FOOTER_SECTIONS = [
   {
@@ -62,14 +64,14 @@ export const BITPANDA_TECH_LINKS = [
 export const COMPANY_LINKS = ["Über uns", "Karriere", "Presse", "Blog", "Hilfe"];
 
 export const SOCIAL_ICONS = [
-  { name: "Facebook", symbol: "f" },
-  { name: "Twitter", symbol: "𝕏" },
-  { name: "Telegram", symbol: "t" },
-  { name: "Reddit", symbol: "r" },
-  { name: "LinkedIn", symbol: "in" },
-  { name: "YouTube", symbol: "yt" },
-  { name: "Discord", symbol: "d" },
-  { name: "Instagram", symbol: "ig" }
+  { name: "Facebook", icon: React.createElement(FacebookIcon) },
+  { name: "Twitter", icon: React.createElement(TwitterIcon) },
+  { name: "Telegram", icon: React.createElement(TelegramIcon) },
+  { name: "Reddit", icon: React.createElement(RedditIcon) },
+  { name: "LinkedIn", icon: React.createElement(LinkedInIcon) },
+  { name: "YouTube", icon: React.createElement(YouTubeIcon) },
+  { name: "Discord", icon: React.createElement(DiscordIcon) },
+  { name: "Instagram", icon: React.createElement(InstagramIcon) }
 ];
 
 export const LEGAL_LINKS = [

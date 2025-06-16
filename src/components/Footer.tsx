@@ -1,4 +1,5 @@
 
+
 export const Footer = () => {
   const footerSections = [
     {
@@ -71,6 +72,34 @@ export const Footer = () => {
     { name: "YouTube", symbol: "yt" },
     { name: "Discord", symbol: "d" },
     { name: "Instagram", symbol: "ig" }
+  ];
+
+  const legalLinks = [
+    "Impressum",
+    "Datenschutzerklärung", 
+    "Geschäftsbedingungen und Richtlinien",
+    "Hinweisgeber",
+    "Complaints",
+    "Bug Bounty",
+    "Cookie settings"
+  ];
+
+  const mediaLogos = [
+    {
+      name: "Bloomberg",
+      src: "https://sbcdn.bitpanda.com/500x102/ad04ac45f1/bloomberg-logo-white.png",
+      alt: "Bloomberg"
+    },
+    {
+      name: "TechCrunch", 
+      src: "https://sbcdn.bitpanda.com/500x71/9be9840de7/techcrunch-logo-white.png",
+      alt: "TechCrunch"
+    },
+    {
+      name: "CNBC",
+      src: "https://sbcdn.bitpanda.com/500x68/08e67f4838/cnbc-logo-white.png", 
+      alt: "CNBC"
+    }
   ];
 
   return (
@@ -189,6 +218,44 @@ export const Footer = () => {
           ))}
         </div>
       </div>
+      
+      {/* Final Footer Section */}
+      <div className="bg-black text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          <div className="flex flex-col lg:flex-row justify-between items-center">
+            {/* Legal Links */}
+            <div className="flex flex-wrap gap-4 mb-6 lg:mb-0">
+              {legalLinks.map((link, index) => (
+                <a 
+                  key={index}
+                  href="#" 
+                  className="text-white hover:text-gray-300 transition-colors duration-200 text-sm"
+                >
+                  {link}
+                </a>
+              ))}
+            </div>
+            
+            {/* Copyright */}
+            <div className="text-white text-sm mb-6 lg:mb-0">
+              © 2025 Bitpanda GmbH
+            </div>
+          </div>
+          
+          {/* Media Logos */}
+          <div className="flex flex-wrap justify-center lg:justify-start items-center gap-8 mt-8 pt-8 border-t border-gray-800">
+            {mediaLogos.map((logo, index) => (
+              <img 
+                key={index}
+                src={logo.src}
+                alt={logo.alt}
+                className="h-8 opacity-70 hover:opacity-100 transition-opacity duration-200"
+              />
+            ))}
+          </div>
+        </div>
+      </div>
     </footer>
   );
 };
+

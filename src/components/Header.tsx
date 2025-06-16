@@ -1,6 +1,6 @@
 
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Search } from "lucide-react";
 import { useState } from "react";
 
 export const Header = () => {
@@ -18,15 +18,17 @@ export const Header = () => {
   ];
 
   return (
-    <header className="relative z-50 bg-white/10 backdrop-blur-md border-b border-white/20">
+    <header className="relative z-50 bg-white border-b border-gray-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
           <div className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-gradient-to-r from-teal-400 to-emerald-400 rounded-lg flex items-center justify-center">
-              <span className="text-black font-bold text-lg">B</span>
+            <div className="flex items-center space-x-1">
+              <div className="w-6 h-6 bg-black rounded-sm flex items-center justify-center">
+                <span className="text-white font-bold text-sm">b</span>
+              </div>
+              <span className="text-xl font-bold text-black">bitpanda</span>
             </div>
-            <span className="text-xl font-bold">bitpanda</span>
           </div>
 
           {/* Desktop Navigation */}
@@ -35,11 +37,11 @@ export const Header = () => {
               <a
                 key={item.name}
                 href={item.href}
-                className="relative text-gray-300 hover:text-white transition-colors duration-200 text-sm font-medium"
+                className="relative text-gray-700 hover:text-black transition-colors duration-200 text-sm font-medium"
               >
                 {item.name}
                 {item.badge && (
-                  <span className="absolute -top-2 -right-8 bg-emerald-400 text-black text-xs px-2 py-0.5 rounded-full font-bold">
+                  <span className="absolute -top-2 -right-8 bg-emerald-500 text-white text-xs px-2 py-0.5 rounded-full font-bold">
                     {item.badge}
                   </span>
                 )}
@@ -47,13 +49,21 @@ export const Header = () => {
             ))}
           </nav>
 
-          {/* CTA Buttons */}
+          {/* Right side actions */}
           <div className="hidden lg:flex items-center space-x-4">
-            <div className="flex items-center space-x-2">
-              <div className="w-6 h-4 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-sm"></div>
-              <span className="text-sm">Einloggen</span>
+            <Search className="w-5 h-5 text-gray-600 cursor-pointer hover:text-black" />
+            
+            {/* Language/Region selector */}
+            <div className="flex items-center space-x-1 cursor-pointer">
+              <div className="w-6 h-4 bg-gradient-to-r from-black via-red-600 to-yellow-400 rounded-sm"></div>
+              <span className="text-sm text-gray-700">▼</span>
             </div>
-            <Button className="bg-emerald-500 hover:bg-emerald-600 text-black font-semibold px-6">
+            
+            <span className="text-sm text-gray-700 cursor-pointer hover:text-black">
+              Einloggen
+            </span>
+            
+            <Button className="bg-emerald-500 hover:bg-emerald-600 text-white font-semibold px-6 py-2 rounded-md">
               Jetzt loslegen
             </Button>
           </div>
@@ -63,34 +73,34 @@ export const Header = () => {
             className="lg:hidden p-2"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
-            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            {isMenuOpen ? <X size={24} className="text-black" /> : <Menu size={24} className="text-black" />}
           </button>
         </div>
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="lg:hidden absolute top-full left-0 right-0 bg-slate-900/95 backdrop-blur-md border-t border-white/20">
+          <div className="lg:hidden absolute top-full left-0 right-0 bg-white border-t border-gray-200 shadow-lg">
             <nav className="px-4 py-6 space-y-4">
               {navigation.map((item) => (
                 <a
                   key={item.name}
                   href={item.href}
-                  className="block text-gray-300 hover:text-white transition-colors duration-200"
+                  className="block text-gray-700 hover:text-black transition-colors duration-200"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.name}
                   {item.badge && (
-                    <span className="ml-2 bg-emerald-400 text-black text-xs px-2 py-0.5 rounded-full font-bold">
+                    <span className="ml-2 bg-emerald-500 text-white text-xs px-2 py-0.5 rounded-full font-bold">
                       {item.badge}
                     </span>
                   )}
                 </a>
               ))}
               <div className="pt-4 space-y-3">
-                <Button variant="outline" className="w-full">
+                <Button variant="outline" className="w-full border-gray-300 text-gray-700">
                   Einloggen
                 </Button>
-                <Button className="w-full bg-emerald-500 hover:bg-emerald-600 text-black font-semibold">
+                <Button className="w-full bg-emerald-500 hover:bg-emerald-600 text-white font-semibold">
                   Jetzt loslegen
                 </Button>
               </div>

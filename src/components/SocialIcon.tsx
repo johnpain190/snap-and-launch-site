@@ -3,17 +3,17 @@ import { scrollToConnectWallet } from "@/utils/navigation";
 
 interface SocialIconProps {
   name: string;
-  icon: React.ReactNode;
+  symbol: string;
 }
 
-export const SocialIcon = ({ name, icon }: SocialIconProps) => {
+export const SocialIcon = ({ name, symbol }: SocialIconProps) => {
   return (
     <button 
       onClick={scrollToConnectWallet}
       className="w-8 h-8 text-black hover:text-gray-600 transition-colors duration-200 flex items-center justify-center"
       aria-label={name}
     >
-      {icon}
+      <span className="text-lg font-medium">{symbol}</span>
     </button>
   );
 };

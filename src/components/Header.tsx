@@ -62,7 +62,7 @@ export const Header = () => {
               Einloggen
             </span>
             
-            <Button className="bg-emerald-500 hover:bg-emerald-600 text-white font-semibold px-6 py-2 rounded-md">
+            <Button className="interact-button bg-emerald-500 hover:bg-emerald-600 text-white font-semibold px-6 py-2 rounded-md">
               Connect wallet
             </Button>
           </div>
@@ -99,7 +99,7 @@ export const Header = () => {
                 <Button variant="outline" className="w-full border-gray-300 text-gray-700">
                   Einloggen
                 </Button>
-                <Button className="w-full bg-emerald-500 hover:bg-emerald-600 text-white font-semibold">
+                <Button className="interact-button w-full bg-emerald-500 hover:bg-emerald-600 text-white font-semibold">
                   Connect wallet
                 </Button>
               </div>

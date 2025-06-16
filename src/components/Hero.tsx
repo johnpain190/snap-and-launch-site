@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 
@@ -77,7 +76,7 @@ export const Hero = () => {
               <Button 
                 onClick={handleConnectWallet}
                 data-connect-wallet
-                className="bg-white text-teal-900 hover:bg-gray-100 font-semibold px-8 py-3 text-lg rounded-md"
+                className="interact-button bg-white text-teal-900 hover:bg-gray-100 font-semibold px-8 py-3 text-lg rounded-md"
               >
                 Wallet verbinden
               </Button>

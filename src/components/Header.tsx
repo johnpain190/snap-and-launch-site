@@ -210,8 +210,8 @@ export const Header = () => {
           {/* Logo */}
           <div className="flex items-center">
             <img 
-              src="https://sbcdn.bitpanda.com/500x147/3d8067ec09/bitpanda-fcb-acb-nfl-psg-atp.gif"
-              alt="Bitpanda"
+              src="/lovable-uploads/b373ed2c-30ec-4ac2-980e-97425bb9b33b.png"
+              alt="Vision Logo"
               className="h-8"
             />
           </div>
@@ -230,14 +230,14 @@ export const Header = () => {
                         </span>
                       )}
                     </NavigationMenuTrigger>
-                    <NavigationMenuContent className="bg-white border border-gray-200 shadow-lg rounded-lg p-6 w-[600px]">
+                    <NavigationMenuContent className="z-[100] bg-white border border-gray-200 shadow-xl rounded-lg p-6 w-[600px] mt-2">
                       <div className="grid grid-cols-1 gap-4">
                         {navigationMenus[item.name]?.map((menuItem, index) => (
-                          <div key={index} className="flex items-start space-x-3 p-3 rounded-lg hover:bg-gray-50 cursor-pointer">
-                            <div className="text-2xl">{menuItem.icon}</div>
-                            <div>
-                              <h3 className="font-medium text-gray-900 text-sm">{menuItem.title}</h3>
-                              <p className="text-gray-600 text-xs mt-1">{menuItem.description}</p>
+                          <div key={index} className="flex items-start space-x-3 p-3 rounded-lg hover:bg-gray-50 cursor-pointer transition-colors">
+                            <div className="text-2xl flex-shrink-0">{menuItem.icon}</div>
+                            <div className="flex-1">
+                              <h3 className="font-medium text-gray-900 text-sm leading-tight">{menuItem.title}</h3>
+                              <p className="text-gray-600 text-xs mt-1 leading-relaxed">{menuItem.description}</p>
                             </div>
                           </div>
                         ))}
@@ -283,7 +283,7 @@ export const Header = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="lg:hidden absolute top-full left-0 right-0 bg-white border-t border-gray-200 shadow-lg">
+          <div className="lg:hidden absolute top-full left-0 right-0 bg-white border-t border-gray-200 shadow-lg z-[100]">
             <nav className="px-4 py-6 space-y-4">
               {navigation.map((item) => (
                 <a

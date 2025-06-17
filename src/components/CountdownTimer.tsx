@@ -37,24 +37,24 @@ export const CountdownTimer = ({ targetDate }: CountdownTimerProps) => {
   }, [targetDate]);
 
   return (
-    <div className="flex space-x-8 lg:space-x-12">
+    <div className="flex space-x-4 sm:space-x-6 md:space-x-8 lg:space-x-12 justify-center w-full">
       <div className="text-center">
-        <div className="text-6xl lg:text-8xl font-bold text-white mb-2">
+        <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-8xl font-bold text-white mb-1 sm:mb-2">
           {timeLeft.days.toString().padStart(2, '0')}
         </div>
-        <div className="text-white/70 text-lg">Tage</div>
+        <div className="text-white/70 text-sm sm:text-base lg:text-lg">Tage</div>
       </div>
       <div className="text-center">
-        <div className="text-6xl lg:text-8xl font-bold text-white mb-2">
+        <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-8xl font-bold text-white mb-1 sm:mb-2">
           {timeLeft.hours.toString().padStart(2, '0')}
         </div>
-        <div className="text-white/70 text-lg">Stunden</div>
+        <div className="text-white/70 text-sm sm:text-base lg:text-lg">Stunden</div>
       </div>
       <div className="text-center">
-        <div className="text-6xl lg:text-8xl font-bold text-white mb-2">
+        <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-8xl font-bold text-white mb-1 sm:mb-2">
           {timeLeft.minutes.toString().padStart(2, '0')}
         </div>
-        <div className="text-white/70 text-lg">Minuten</div>
+        <div className="text-white/70 text-sm sm:text-base lg:text-lg">Minuten</div>
       </div>
     </div>
   );
